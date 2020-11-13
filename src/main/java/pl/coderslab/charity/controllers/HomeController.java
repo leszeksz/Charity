@@ -1,5 +1,6 @@
 package pl.coderslab.charity.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -18,13 +19,14 @@ public class HomeController {
     InstitutionService institutionService;
     DonationService donationService;
 
+    @Autowired
     public HomeController(DonationService donationService, InstitutionService institutionService){
         this.institutionService = institutionService;
         this.donationService = donationService;
     }
 
     @RequestMapping("/")
-    public String homeAction(Model model){
+    public String homeAction(){
 
         return "index";
     }
