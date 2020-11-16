@@ -18,4 +18,9 @@ public class DonationServiceDb implements DonationService {
     public List<Donation> findAll() {
         return donationRepository.findAll();
     }
+
+    @Override
+    public Donation save(Donation donation) {
+        return donationRepository.save(donation);
+    }
 }

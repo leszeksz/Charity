@@ -36,9 +36,9 @@ public class HomeController {
         List<Institution> institutions = institutionService.findAll();
         for (int i = 1; i < 2; i++) {
             institutionService.findAll();
-            model.addAttribute("allInstitutions", institutions);
+//            model.addAttribute("allInstitutions", institutions);
         }
-//        model.addAttribute("allInstitutions", institutions);
+        model.addAttribute("allInstitutions", institutions);
     }
 
     @ModelAttribute
