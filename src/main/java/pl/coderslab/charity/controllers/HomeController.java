@@ -34,12 +34,18 @@ public class HomeController {
     @ModelAttribute
     void institutionsList(Model model){
         List<Institution> institutions = institutionService.findAll();
-        model.addAttribute("allInstitutions", institutions);
+        for (int i = 1; i < 2; i++) {
+            institutionService.findAll();
+            model.addAttribute("allInstitutions", institutions);
+        }
+//        model.addAttribute("allInstitutions", institutions);
     }
 
     @ModelAttribute
     void getAllInfoAboutDonations(Model model){
         List<Donation> donations = donationService.findAll();
+        int generalQuantity = donations.stream().mapToInt(Donation::getQuantity).sum();
         model.addAttribute("donationsQuantity",donations.size());
+        model.addAttribute("quantityOfPacks", generalQuantity);
     }
 }
