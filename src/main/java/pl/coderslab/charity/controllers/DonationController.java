@@ -22,12 +22,12 @@ public class DonationController {
         this.institutionService = institutionService;
     }
 
-    @RequestMapping("/donate")
-    public String donationAction() {
-        return "donateForm";
-    }
+//    @RequestMapping("/donate")
+//    public String donationAction() {
+//        return "donateForm";
+//    }
 
-    @GetMapping
+    @GetMapping("/donate")
     public String donationForm(Model model) {
         model.addAttribute("donation", new Donation());
         model.addAttribute("categories", categoryService.findAll());

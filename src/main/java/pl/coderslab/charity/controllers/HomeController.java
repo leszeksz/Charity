@@ -31,7 +31,7 @@ public class HomeController {
         return "index";
     }
 
-    @ModelAttribute
+    @ModelAttribute("institu")
     void institutionsList(Model model){
         List<Institution> institutions = institutionService.findAll();
         for (int i = 1; i < 2; i++) {

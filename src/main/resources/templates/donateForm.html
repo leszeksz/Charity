@@ -60,12 +60,12 @@
           <div data-step="2">
             <h3>Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</h3>
 
-<!--            <div class="form-group form-group&#45;&#45;inline">-->
-<!--              <label>-->
-<!--                Liczba 60l worków:-->
-<!--                <input id="quantityOfPacks" type="number" name="bags" step="1" min="1" th:field="*{quantity}"/>-->
-<!--              </label>-->
-<!--            </div>-->
+            <div class="form-group form-group--inline">
+              <label>
+                Liczba 60l worków:
+                <input id="quantityOfPacks" type="number" name="bags" step="1" min="1" th:field="*{quantity}" th:value="${donation.quantity}"/>
+              </label>
+            </div>
 
             <div class="form-group form-group--buttons">
               <button type="button" class="btn prev-step">Wstecz</button>
@@ -104,22 +104,22 @@
               <div class="form-section--column">
                 <h4>Adres odbioru</h4>
                 <div class="form-group form-group--inline">
-                  <label> Ulica <input id="street" type="text" name="address" th:field="*{street}"/> </label>
+                  <label> Ulica <input id="street" type="text" name="address" th:field="*{street}" th:value="${donation.street}"/> </label>
                 </div>
 
                 <div class="form-group form-group--inline">
-                  <label> Miasto <input id="city" type="text" name="city" th:field="*{city}"/> </label>
+                  <label> Miasto <input id="city" type="text" name="city" th:field="*{city}" th:value="${donation.city}"/> </label>
                 </div>
 
                 <div class="form-group form-group--inline">
                   <label>
-                    Kod pocztowy <input id="zipCode" type="text" name="postcode" th:field="*{zipCode}"/>
+                    Kod pocztowy <input id="zipCode" type="text" name="postcode" th:field="*{zipCode}" th:value="${donation.zipCode}"/>
                   </label>
                 </div>
 
                 <div class="form-group form-group--inline">
                   <label>
-                    Numer telefonu <input id="phone" type="text" name="phone" th:field="*{phone}" />
+                    Numer telefonu <input id="phone" type="text" name="phone" th:field="*{phone}" th:value="${donation.phone}"/>
                   </label>
                 </div>
               </div>
@@ -127,17 +127,17 @@
               <div class="form-section--column">
                 <h4>Termin odbioru</h4>
                 <div class="form-group form-group--inline">
-                  <label> Data <input id="pickUpDate" type="date" name="data" th:field="*{pickUpDate}"/> </label>
+                  <label> Data <input id="pickUpDate" type="date" name="data" th:field="*{pickUpDate}" th:value="${donation.pickUpDate}"/> </label>
                 </div>
 
                 <div class="form-group form-group--inline">
-                  <label> Godzina <input id="pickUpTime" type="time" name="time" th:field="*{pickUpTime}"/> </label>
+                  <label> Godzina <input id="pickUpTime" type="time" name="time" th:field="*{pickUpTime}" th:value="${donation.pickUpTime}"/> </label>
                 </div>
 
                 <div class="form-group form-group--inline">
                   <label>
                     Uwagi dla kuriera
-                    <textarea name="more_info" rows="5" th:field="*{pickUpComment}"></textarea>
+                    <textarea name="more_info" rows="5" th:field="*{pickUpComment}" th:value="${donation.pickUpComment}"></textarea>
                   </label>
                 </div>
               </div>
