@@ -3,6 +3,8 @@ package pl.coderslab.charity.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.coderslab.charity.entity.Donation;
 import pl.coderslab.charity.service.CategoryService;
@@ -29,4 +31,12 @@ public class DonationController {
         model.addAttribute("institutions", institutionService.findAll());
         return "donateForm";
     }
+
+    @PostMapping("/donate")
+    public String donationFormConfirmation(@ModelAttribute Donation donation){
+        donationService.save(donation);
+        return "donateFormConfirmation";
+    }
+
+
 }
