@@ -41,11 +41,11 @@ public class HomeController {
         model.addAttribute("allInstitutions", institutions);
     }
 
-    @ModelAttribute
-    void getAllInfoAboutDonations(Model model){
-        List<Donation> donations = donationService.findAll();
-        int generalQuantity = donations.stream().mapToInt(Donation::getQuantity).sum();
-        model.addAttribute("donationsQuantity",donations.size());
-        model.addAttribute("quantityOfPacks", generalQuantity);
-    }
+//    @ModelAttribute
+//    void getAllInfoAboutDonations(Model model){
+//        List<Donation> donations = donationService.findAll();
+//        int generalQuantity = donations.stream().mapToInt(Donation::getQuantity).sum();
+//        model.addAttribute("donationsQuantity",donations.size());
+//        model.addAttribute("quantityOfPacks", generalQuantity);
+//    }
 }
