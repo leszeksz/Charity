@@ -16,8 +16,8 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     Long id;
-    String name;
-    String surname;
+//    String name;
+//    String surname;
     String email;
     String password;
     @ManyToMany(fetch = FetchType.EAGER)

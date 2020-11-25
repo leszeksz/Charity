@@ -4,7 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import pl.coderslab.charity.dto.UserDto;
+import pl.coderslab.charity.entity.User;
 import pl.coderslab.charity.service.UserService;
 
 @Controller
@@ -18,8 +21,13 @@ public class RegistrationController {
 
     @GetMapping("/registration")
     public String registrationForm(Model model){
-        model.addAttribute("user", new UserDto());
+        model.addAttribute("user", new User());
         return "register";
     }
 
+    @PostMapping("/registration")
+    public String registrationAction(@ModelAttribute User user){
+        userService.save(user);
+        return "redirect:/login";
+    }
 }
