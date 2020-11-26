@@ -20,7 +20,7 @@ public class User {
 //    String surname;
     String email;
     String password;
-    @ManyToMany(fetch = FetchType.EAGER)
-    List<Role> role;
-    Boolean isBlocked = false;
+//    @ManyToMany(fetch = FetchType.EAGER)
+//    List<Role> role;
+//    Boolean isBlocked = false;
 }
